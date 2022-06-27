@@ -704,11 +704,7 @@ iframe{
                 
         }
     
-        .sidenav {
-            margin-top: 50px;   
-            
-        }
-    
+  
         .sidenav ul li a{
            color: #eee;
            
@@ -729,6 +725,7 @@ iframe{
     
         }
         .sidenav>ul>li:first-child{
+           
             display: block;
             z-index: 99999;
         }
