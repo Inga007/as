@@ -29,7 +29,7 @@ html{
     position: fixed;
     top: 0;
     z-index: 1000;   
-    padding: 5px 10px;
+    padding:  10px;
     background: transparent;
 }
 
@@ -65,7 +65,7 @@ html{
     text-align: center;
     text-decoration: none;
 }
-.sidenav ul li a:after{
+.sidenav ul li a::after{
     content: "";
     width: 0%;
     height: 2px;
@@ -188,8 +188,59 @@ html{
     right: 30px;
     z-index: 99999;
 }
-.lastchild{
-    color: #ec0b36 !important;
+
+
+.drop {
+    position: relative;
+}
+
+.drop::after  {
+    content: '';
+    width: 0;
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    height: 0;
+    cursor: pointer;
+    border: 5px solid transparent;
+    border-top-color: #ec0b36;
+}
+.drop_menu {
+
+    position: absolute;
+    top: 100%;
+   
+    display: none !important;
+    z-index: 110;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    
+}
+
+.drop .drop_menu li a{
+    font-family: armfont;
+    font-size: 18px;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+.drop a img{
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid #000;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+.drop .drop_menu li a img{
+    width: 20px;
+    height: 20px;
+}
+.drop_menu.active{
+  display: block !important;
+  transition: .5s;
 }
 /* banner */
 .banner{
@@ -328,9 +379,9 @@ html{
    display: -webkit-box; 
    display: -ms-flexbox;  
    display: flex;
-   -webkit-box-pack: center;
-       -ms-flex-pack: center;
-           justify-content: center;
+   -webkit-box-pack: start;
+       -ms-flex-pack: start;
+           justify-content: flex-start;
    -webkit-box-align: center;
        -ms-flex-align: center;
            align-items: center;
@@ -657,7 +708,7 @@ iframe{
             top: 0px;
             right: 0;
             overflow-x: hidden;
-            padding: 30px 0;
+            padding: 50px 0 0;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
             -ms-flex-direction: column;
@@ -725,9 +776,18 @@ iframe{
     
         }
         .sidenav>ul>li:first-child{
-           
+         
             display: block;
             z-index: 99999;
+        }
+        .drop:after {
+            content: '';
+            right: -5px
+        }
+        .drop_menu{
+            width: 100%;
+            text-align: center;
+            left: 0px;
         }
         .banner_text h1{
             margin-top: 30px;
@@ -775,8 +835,13 @@ iframe{
             flex-direction: column;
         }
         .footer_content{
-            justify-content: center;
+            justify-content: flex-start;
          }
+         .mx-auto{
+           
+            justify-content: flex-start;
+            
+        }
          .iframblock{
             flex-direction: column;
          }

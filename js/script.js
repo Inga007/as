@@ -15,7 +15,9 @@ $(document).ready(function(){
      }
      });
 
-
+     $('.drop').on('click', function(){
+		$('.drop_menu').toggleClass('active');
+	})
 var time = 0;
 $('.open-menu').on('click', function(){
     if($(this).hasClass('close-menu')){
@@ -33,13 +35,14 @@ $('.open-menu').on('click', function(){
 
         $(menu_li).each(function() {
                 time++;
-                $(this).css({ 'marginTop': '10px','transition-delay': '0.' + time + 's' });
+                $(this).css({ 'marginTop': '15px','transition-delay': '0.' + time + 's' });
                 $(this).addClass('anim-menu')
              })
     
     }
 
 })
+
 function copyRight(){
     let date = new Date()
     let year = date.getFullYear()
